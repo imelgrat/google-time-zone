@@ -14,8 +14,7 @@
 		 * 
 		 * @author    Ivan Melgrati
 		 * @copyright Copyright 2016 by Ivan Melgrati
-		 * @license   https://github.com/jstayton/Miner/blob/master/LICENSE-MIT
-		 * @link      https://github.com/imelgrat/google-time-zone/blob/master/LICENSE
+		 * @license   https://github.com/imelgrat/google-time-zone/blob/master/LICENSE
 		 * @link      https://developers.google.com/maps/documentation/timezone/intro
 		 * @version   v1.2.0 stable 
 		 */
