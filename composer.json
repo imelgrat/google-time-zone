@@ -1,10 +1,10 @@
 {
-    "name": "imelgrat/freegoip",
+    "name": "imelgrat/google-time-zone",
     "type": "library",
-	"version" : 1.1.0,
-    "description": "FreeGoIP - A PHP wrapper for FreeGoIP reverse geolocation API.",
-    "keywords": ["geocoding", "geolocation", "API", "timezone", "time-zone", "reverse geocoding", "time zone", "latitude", "longitude"],
-    "homepage": "https://github.com/imelgrat/freegoip",
+	"version" : "1.20.",
+    "description": "A PHP wrapper for the Google Maps TimeZone API.",
+    "keywords": ["google", "map", "maps", "gmap", "gmaps", "timeze", "time zone", "location"],
+    "homepage": "https://github.com/imelgrat/google-time-zone",
     "license": "MIT",
     "authors": [
         {
@@ -15,14 +15,15 @@
     ],
     "autoload": {
         "psr-0": {
-            "freegoip": "src/"
+            "google-time-zone": "src/"
         }
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.3.0"
     },
     "require-dev": {
-        "phpdocumentor/phpdocumentor": "*",
-		"php": ">=5.3.0"
+        "phpdocumentor/phpdocumentor": "*"
     }
 }
