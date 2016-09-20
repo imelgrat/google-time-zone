@@ -11,7 +11,17 @@
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/prism.css" rel="stylesheet" media="all"/>
     <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
+        <link href="../css/jquery.iviewer.css" rel="stylesheet" media="all"/>
+    <style>
+        #viewer {
+            position: relative;
+            width: 100%;
+        }
+        .wrapper {
+            overflow: hidden;
+        }
+    </style>
+
     <!--[if lt IE 9]>
     <script src="../js/html5.js"></script>
     <![endif]-->
@@ -21,7 +31,22 @@
     <script src="../js/jquery.smooth-scroll.js"></script>
     <script src="../js/prism.min.js"></script>
     <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
-    
+        <script src="../js/jquery.mousewheel.js" type="text/javascript"></script>
+    <script src="../js/jquery.iviewer.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(window).resize(function(){
+            $("#viewer").height($(window).height() - 100);
+        });
+
+        $(document).ready(function() {
+            $("#viewer").iviewer({src: '../graphs/classes.svg', zoom_animation: false});
+            $('#viewer img').bind('dragstart', function(event){
+                event.preventDefault();
+            });
+            $(window).resize();
+        });
+    </script>
+
     <link rel="shortcut icon" href="../images/favicon.ico"/>
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
@@ -83,63 +108,13 @@
 </div>
 
 <div id="___" class="container-fluid">
-        <section class="row-fluid">
-        <div class="span2 sidebar">
-                                <div class="accordion" style="margin-bottom: 0">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1540163506"></a>
-                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
-            </div>
-            <div id="namespace-1540163506" class="accordion-body collapse in">
-                <div class="accordion-inner">
-
-                    
-                    <ul>
-                                                                                                    <li class="class"><a href="../classes/GoogleMapsTimeZone.html">GoogleMapsTimeZone</a></li>
-                                            </ul>
-                </div>
+        <div class="row-fluid">
+        <div class="span12">
+            <div class="wrapper">
+                <div id="viewer" class="viewer"></div>
             </div>
         </div>
     </div>
-
-        </div>
-    </section>
-    <section class="row-fluid">
-        <div class="span10 offset2">
-            <div class="row-fluid">
-                <div class="span8 content namespace">
-                    <nav>
-                                                
-                                            </nav>
-                    <h1><small></small>\</h1>
-
-                    
-                    
-                    
-                                        <h2>Classes</h2>
-                    <table class="table table-hover">
-                                            <tr>
-                            <td><a href="../classes/GoogleMapsTimeZone.html">GoogleMapsTimeZone</a></td>
-                            <td><em>A PHP wrapper for the Google Maps TimeZone API.</em></td>
-                        </tr>
-                                        </table>
-                                    </div>
-
-                <aside class="span4 detailsbar">
-                    <dl>
-                        <dt>Namespace hierarchy</dt>
-                        <dd class="hierarchy">
-                                                                                                                                                <div class="namespace-wrapper">\</div>
-                        </dd>
-                    </dl>
-                </aside>
-            </div>
-
-            
-            
-        </div>
-    </section>
 
     <footer class="row-fluid">
         <section class="span10 offset2">
