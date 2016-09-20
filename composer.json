@@ -1,8 +1,9 @@
 {
     "name": "imelgrat/google-time-zone",
     "type": "library",
+    "version" : "1.2.0",
     "description": "A PHP wrapper for the Google Maps TimeZone API.",
-    "keywords": ["google", "map", "maps", "gmap", "gmaps", "timeze", "time zone", "location"],
+    "keywords": ["google", "map", "maps", "gmap", "gmaps", "timezone", "time zone", "location"],
     "homepage": "https://github.com/imelgrat/google-time-zone",
     "license": "MIT",
     "authors": [
