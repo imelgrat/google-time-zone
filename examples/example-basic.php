@@ -10,7 +10,7 @@
 	 * @version    v1.0.0 stable 
 	 */
 
-	require_once ('../src/GoogleTimeZone.php');
+	require_once ('../src/GoogleMapsTimeZone.php');
     
     /**
      * All queries require an API key from Google
