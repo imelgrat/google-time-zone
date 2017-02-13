@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpdoc>
-  <title>GoogleTimeZone - A PHP wrapper for the Google Maps TimeZone API.</title>
+  <title>GoogleTimeZone - A PHP wrapper for the Google Maps Time Zone API.</title>
   <parser>
     <target>docs</target>
   </parser>
