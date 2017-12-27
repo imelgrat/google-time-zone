@@ -7,7 +7,7 @@ google-time-zone
 
 A PHP wrapper for the Google Maps Time Zone API.
 
-Developed by [Ivan Melgrati](https://twitter.com/imelgrat)
+Developed by [Ivan Melgrati](https://imelgrat.me) [![Twitter](https://img.shields.io/twitter/url/https/github.com/imelgrat/tab-collapse.svg?style=social)](https://twitter.com/imelgrat)
 
 Requirements
 ------------
