@@ -3,16 +3,14 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>GoogleTimeZone - A PHP wrapper for the Google Maps TimeZone API.</title>
+    <title>Documentation for GoogleMapsTimeZone</title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>
-
     <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/prism.css" rel="stylesheet" media="all"/>
     <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-    <!--[if lt IE 9]>
+        <!--[if lt IE 9]>
     <script src="../js/html5.js"></script>
     <![endif]-->
     <script src="../js/jquery-1.11.0.min.js"></script>
@@ -69,22 +67,25 @@
         loadExternalCodeSnippets();
     })
 </script>
-
     <link rel="shortcut icon" href="../images/favicon.ico"/>
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="192x192" href="../images/apple-touch-icon-192x192.png"/>
+	<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png"/>
+	<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png"/>
+	<link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#00aba9">
+	<meta name="theme-color" content="#ffffff">
 </head>
 <body>
-
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <i class="icon-ellipsis-vertical"></i>
             </a>
-            <a class="brand" href="../index.html">GoogleTimeZone - A PHP wrapper for the Google Maps TimeZone API.</a>
-
+            <a class="brand" href="../index.html">GoogleMapsTimeZone</a>
             <div class="nav-collapse">
                 <ul class="nav pull-right">
                                         <li class="dropdown" id="charts-menu">
@@ -136,10 +137,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2088478298"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-275919849"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-2088478298" class="accordion-body collapse in">
+            <div id="namespace-275919849" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -164,7 +165,10 @@
 
                     <h1><small>\</small>GoogleMapsTimeZone</h1>
                     <p><em>A PHP wrapper for the Google Maps TimeZone API.</em></p>
-                    
+                    <p>The Google Maps Time Zone API provides a simple interface to request the time zone for a location on the earth, as well as that location's time offset from UTC.
+The API provides time offset data for locations on the surface of the earth. Requests for the time zone information are made for a specific latitude/longitude pair and date.
+The API returns the name of that time zone (in different languages), the time offset from UTC, and the daylight savings offset in a user-selectable format (XML or JSON).
+In order to be able to use this class, it's necessary to provide an API key or, for business clients, Client ID and signing key.</p>
                     
                                         
                     <section id="summary">
@@ -275,7 +279,7 @@
                         
                         
                                                                             <dt>See also</dt>
-                                                                                        <dd><a href="https://developers.google.com/maps/documentation/timezone/intro"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro</span></a></dd>
+                                                                                    <dd><a target="_blank" href="https://developers.google.com/maps/documentation/timezone/intro"><div class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro</div></a></dd>
                                                     
                                                                         </dl>
                     <h2>Tags</h2>
@@ -293,7 +297,7 @@
                                 copyright
                             </th>
                             <td>
-                                                                    <p>Copyright 2016 by Ivan Melgrati</p>
+                                                                    <p>Copyright 2018 by Ivan Melgrati</p>
                                                             </td>
                         </tr>
                                             <tr>
@@ -302,14 +306,6 @@
                             </th>
                             <td>
                                                                     <p><a href="https://github.com/imelgrat/google-time-zone/blob/master/LICENSE">https://github.com/imelgrat/google-time-zone/blob/master/LICENSE</a></p>
-                                                            </td>
-                        </tr>
-                                            <tr>
-                            <th>
-                                version
-                            </th>
-                            <td>
-                                                                    <p>v1.2.0 stable</p>
                                                             </td>
                         </tr>
                                         </table>
@@ -568,9 +564,9 @@
         <div class="span8 content class">
             <a id="property_format" name="property_format" class="anchor"></a>
             <article class="property">
-                <h3 class="protected ">$format</h3>
+                <h3 class="protected "><span class="instance"></span>$format</h3>
                 <pre class="signature">$format : string</pre>
-                <p><em>Response format.</em></p>
+                <p><em>Response format (XML or JSON).</em></p>
                 
 
                                 <h4>Type</h4>
@@ -592,9 +588,9 @@
         <div class="span8 content class">
             <a id="property_latitude" name="property_latitude" class="anchor"></a>
             <article class="property">
-                <h3 class="protected ">$latitude</h3>
+                <h3 class="protected "><span class="instance"></span>$latitude</h3>
                 <pre class="signature">$latitude : float|string</pre>
-                <p><em>Latitude to obtain the Time Zone from.</em></p>
+                <p><em>Latitude to obtain the Time Zone for.</em></p>
                 
 
                                 <h4>Type</h4>
@@ -616,9 +612,9 @@
         <div class="span8 content class">
             <a id="property_longitude" name="property_longitude" class="anchor"></a>
             <article class="property">
-                <h3 class="protected ">$longitude</h3>
+                <h3 class="protected "><span class="instance"></span>$longitude</h3>
                 <pre class="signature">$longitude : float|string</pre>
-                <p><em>Longitude to obtain the Time Zone from.</em></p>
+                <p><em>Longitude to obtain the Time Zone for.</em></p>
                 
 
                                 <h4>Type</h4>
@@ -640,9 +636,9 @@
         <div class="span8 content class">
             <a id="property_timestamp" name="property_timestamp" class="anchor"></a>
             <article class="property">
-                <h3 class="protected ">$timestamp</h3>
+                <h3 class="protected "><span class="instance"></span>$timestamp</h3>
                 <pre class="signature">$timestamp : integer</pre>
-                <p><em>Desired time as seconds since midnight, January 1, 1970 UTC.The Google Maps Time Zone API uses the timestamp to determine whether or not Daylight Savings should be applied. Times before 1970 can be expressed as negative values.</em></p>
+                <p><em>Desired time as seconds since midnight, January 1, 1970 UTC. The Google Maps Time Zone API uses the timestamp to determine whether or not Daylight Savings should be applied. Times before 1970 can be expressed as negative values.</em></p>
                 
 
                                 <h4>Type</h4>
@@ -664,7 +660,7 @@
         <div class="span8 content class">
             <a id="property_language" name="property_language" class="anchor"></a>
             <article class="property">
-                <h3 class="protected ">$language</h3>
+                <h3 class="protected "><span class="instance"></span>$language</h3>
                 <pre class="signature">$language : string</pre>
                 <p><em>Language code in which to return results.</em></p>
                 
@@ -688,7 +684,7 @@
         <div class="span8 content class">
             <a id="property_apiKey" name="property_apiKey" class="anchor"></a>
             <article class="property">
-                <h3 class="protected ">$apiKey</h3>
+                <h3 class="protected "><span class="instance"></span>$apiKey</h3>
                 <pre class="signature">$apiKey : string</pre>
                 <p><em>Google Maps API key to authenticate with.</em></p>
                 
@@ -712,9 +708,9 @@
         <div class="span8 content class">
             <a id="property_clientId" name="property_clientId" class="anchor"></a>
             <article class="property">
-                <h3 class="protected ">$clientId</h3>
+                <h3 class="protected "><span class="instance"></span>$clientId</h3>
                 <pre class="signature">$clientId : string</pre>
-                <p><em>Google Maps API Client ID for Business clients.</em></p>
+                <p><em>Google Maps API Client ID to authenticate Business clients with.</em></p>
                 
 
                                 <h4>Type</h4>
@@ -736,9 +732,9 @@
         <div class="span8 content class">
             <a id="property_signingKey" name="property_signingKey" class="anchor"></a>
             <article class="property">
-                <h3 class="protected ">$signingKey</h3>
+                <h3 class="protected "><span class="instance"></span>$signingKey</h3>
                 <pre class="signature">$signingKey : string</pre>
-                <p><em>Google Maps API Cryptographic signing key for Business clients.</em></p>
+                <p><em>Google Maps API Cryptographic signing key to authenticate Business clients with.</em></p>
                 
 
                                 <h4>Type</h4>
@@ -767,7 +763,7 @@
         <div class="span8 content class">
             <a id="method___construct" name="method___construct" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">__construct()</h3>
+                <h3 class="public "><span class="instance"></span>__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">__construct(float  <span class="argument">$latitude</span>, float  <span class="argument">$longitude</span>, integer|string  <span class="argument">$timestamp</span>, string  <span class="argument">$format = self::FORMAT_JSON</span>) : \GoogleMapsTimeZone</pre>
                 <p><em>Constructor. The request is not executed until `queryTimeZone()` is called.</em></p>
@@ -778,12 +774,12 @@
                                                     <tr>
                                 <td>float</td>
                                 <td>$latitude </td>
-                                <td><p>latitude of the location of the location to get timezone information from</p></td>
+                                <td><p>latitude of the location of the location to get timezone information for. Default: 0</p></td>
                             </tr>
                                                     <tr>
                                 <td>float</td>
                                 <td>$longitude </td>
-                                <td><p>longitude of the location of the location to get timezone information from</p></td>
+                                <td><p>longitude of the location of the location to get timezone information for. Default: 0</p></td>
                             </tr>
                                                     <tr>
                                 <td>integer|string</td>
@@ -818,10 +814,10 @@
         <div class="span8 content class">
             <a id="method_setFormat" name="method_setFormat" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">setFormat()</h3>
+                <h3 class="public "><span class="instance"></span>setFormat()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">setFormat(string  <span class="argument">$format</span>) : \GoogleMapsTimeZone</pre>
-                <p><em>Set the response format.</em></p>
+                <p><em>Set the response format (JSON or XML).</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -842,9 +838,7 @@
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/timezone/intro#Responses"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro#Responses</span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -856,10 +850,10 @@
         <div class="span8 content class">
             <a id="method_getFormat" name="method_getFormat" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">getFormat()</h3>
+                <h3 class="public "><span class="instance"></span>getFormat()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getFormat() : string</pre>
-                <p><em>Get the response format.</em></p>
+                <p><em>Get the response format (JSON or XML).</em></p>
                 
 
                 
@@ -873,9 +867,7 @@
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/timezone/intro#Responses"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro#Responses</span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -887,26 +879,23 @@
         <div class="span8 content class">
             <a id="method_isFormatJson" name="method_isFormatJson" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">isFormatJson()</h3>
+                <h3 class="public "><span class="instance"></span>isFormatJson()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">isFormatJson() : boolean</pre>
-                <p><em>Whether the response format is JSON.</em></p>
+                <p><em>Returns true if the response format is JSON.</em></p>
                 
 
                 
                 
                                     <h4>Returns</h4>
                     boolean
-                                            &mdash; <p>whether JSON</p>
                                     				
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/timezone/intro#Requests"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro#Requests</span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -918,26 +907,23 @@
         <div class="span8 content class">
             <a id="method_isFormatXml" name="method_isFormatXml" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">isFormatXml()</h3>
+                <h3 class="public "><span class="instance"></span>isFormatXml()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">isFormatXml() : boolean</pre>
-                <p><em>Whether the response format is XML.</em></p>
+                <p><em>Returns true if the response format is XML.</em></p>
                 
 
                 
                 
                                     <h4>Returns</h4>
                     boolean
-                                            &mdash; <p>whether XML</p>
                                     				
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/timezone/intro#Requests"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro#Requests</span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -949,10 +935,10 @@
         <div class="span8 content class">
             <a id="method_setLatitudeLongitude" name="method_setLatitudeLongitude" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">setLatitudeLongitude()</h3>
+                <h3 class="public "><span class="instance"></span>setLatitudeLongitude()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">setLatitudeLongitude(float|string  <span class="argument">$latitude</span>, float|string  <span class="argument">$longitude</span>) : \GoogleMapsTimeZone</pre>
-                <p><em>Set the latitude/longitude of the location to get timezone information from</em></p>
+                <p><em>Set the latitude/longitude of the location to get timezone information for</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -965,7 +951,7 @@
                                                     <tr>
                                 <td>float|string</td>
                                 <td>$longitude </td>
-                                <td><p>longitude of the location of the location to get timezone information from</p></td>
+                                <td><p>longitude of the location of the location to get timezone information for</p></td>
                             </tr>
                                             </table>
                 
@@ -978,9 +964,7 @@
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/timezone/intro#Usage"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro#Usage</span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -992,10 +976,10 @@
         <div class="span8 content class">
             <a id="method_getLatitudeLongitude" name="method_getLatitudeLongitude" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">getLatitudeLongitude()</h3>
+                <h3 class="public "><span class="instance"></span>getLatitudeLongitude()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getLatitudeLongitude() : string|false</pre>
-                <p><em>Get the latitude/longitude of the location of the location to get timezone information from
+                <p><em>Get the latitude/longitude of the location of the location to get timezone information for
 in comma-separated format.</em></p>
                 
 
@@ -1010,9 +994,7 @@ in comma-separated format.</em></p>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/timezone/intro#Usage"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro#Usage</span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1024,10 +1006,10 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_setLatitude" name="method_setLatitude" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">setLatitude()</h3>
+                <h3 class="public "><span class="instance"></span>setLatitude()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">setLatitude(float|string  <span class="argument">$latitude</span>) : \GoogleMapsTimeZone</pre>
-                <p><em>Set the latitude of the location of the location to get timezone information from</em></p>
+                <p><em>Set the latitude of the location of the location to get timezone information for</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -1035,7 +1017,7 @@ in comma-separated format.</em></p>
                                                     <tr>
                                 <td>float|string</td>
                                 <td>$latitude </td>
-                                <td><p>latitude of the location of the location to get timezone information from</p></td>
+                                <td><p>latitude of the location of the location to get timezone information for</p></td>
                             </tr>
                                             </table>
                 
@@ -1048,9 +1030,7 @@ in comma-separated format.</em></p>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/timezone/intro#Usage"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro#Usage</span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1062,26 +1042,24 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_getLatitude" name="method_getLatitude" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">getLatitude()</h3>
+                <h3 class="public "><span class="instance"></span>getLatitude()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getLatitude() : float|string</pre>
-                <p><em>Get the latitude of the location to get timezone information from</em></p>
+                <p><em>Get the latitude of the location to get timezone information for</em></p>
                 
 
                 
                 
                                     <h4>Returns</h4>
                     float|string
-                                            &mdash; <p>latitude of the location of the location to get timezone information from</p>
+                                            &mdash; <p>latitude of the location of the location to get timezone information for</p>
                                     				
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/timezone/intro#Usage"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro#Usage</span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1093,10 +1071,10 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_setLongitude" name="method_setLongitude" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">setLongitude()</h3>
+                <h3 class="public "><span class="instance"></span>setLongitude()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">setLongitude(float|string  <span class="argument">$longitude</span>) : \GoogleMapsTimeZone</pre>
-                <p><em>Set the longitude of the location to get timezone information from</em></p>
+                <p><em>Set the longitude of the location to get timezone information for</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -1104,7 +1082,7 @@ in comma-separated format.</em></p>
                                                     <tr>
                                 <td>float|string</td>
                                 <td>$longitude </td>
-                                <td><p>longitude of the location of the location to get timezone information from</p></td>
+                                <td><p>longitude of the location of the location to get timezone information for</p></td>
                             </tr>
                                             </table>
                 
@@ -1117,9 +1095,7 @@ in comma-separated format.</em></p>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/timezone/intro#Usage"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro#Usage</span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1131,26 +1107,24 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_getLongitude" name="method_getLongitude" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">getLongitude()</h3>
+                <h3 class="public "><span class="instance"></span>getLongitude()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getLongitude() : float|string</pre>
-                <p><em>Get the longitude of the location to get timezone information from</em></p>
+                <p><em>Get the longitude of the location to get timezone information for</em></p>
                 
 
                 
                 
                                     <h4>Returns</h4>
                     float|string
-                                            &mdash; <p>longitude of the location of the location to get timezone information from</p>
+                                            &mdash; <p>longitude of the location of the location to get timezone information for</p>
                                     				
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/timezone/intro#Usage"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro#Usage</span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1162,18 +1136,18 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_setTimestamp" name="method_setTimestamp" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">setTimestamp()</h3>
+                <h3 class="public "><span class="instance"></span>setTimestamp()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">setTimestamp(integer|string  <span class="argument">$timestamp</span>) : \GoogleMapsTimeZone</pre>
-                <p><em>Set the point in time to get timezone information from (used to determine whether or not DST is active).</em></p>
-                
+                <p><em>Set the point in time to get timezone information for (used to determine whether or not DST is active).</em></p>
+                <p>This can be used to get the selected place's timezone in a point in time.</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
                                 <td>integer|string</td>
                                 <td>$timestamp </td>
-                                <td><p>point in time to get timezone information from. Default: 0 (current time)</p></td>
+                                <td><p>point in time to get timezone information for. Default: 0 (current time)</p></td>
                             </tr>
                                             </table>
                 
@@ -1186,9 +1160,7 @@ in comma-separated format.</em></p>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/timezone/intro#Usage"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro#Usage</span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1200,7 +1172,7 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_getTimestamp" name="method_getTimestamp" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">getTimestamp()</h3>
+                <h3 class="public "><span class="instance"></span>getTimestamp()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getTimestamp() : integer|string</pre>
                 <p><em>Get the point in time to get timezone information from (used to determine whether or not DST is active).</em></p>
@@ -1210,16 +1182,14 @@ in comma-separated format.</em></p>
                 
                                     <h4>Returns</h4>
                     integer|string
-                                            &mdash; <p>point in time to get timezone information from.</p>
+                                            &mdash; <p>point in time to get timezone information for.</p>
                                     				
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/timezone/intro#Usage"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro#Usage</span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1231,7 +1201,7 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_setLanguage" name="method_setLanguage" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">setLanguage()</h3>
+                <h3 class="public "><span class="instance"></span>setLanguage()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">setLanguage(string  <span class="argument">$language</span>) : \GoogleMapsTimeZone</pre>
                 <p><em>Set the language code in which to return results.</em></p>
@@ -1256,7 +1226,7 @@ in comma-separated format.</em></p>
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                                                                             <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/faq#languagesupport"><span class="namespace-wrapper">https://developers.google.com/maps/faq#languagesupport</span></a></dd>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/faq#languagesupport"><span class="namespace-wrapper">https://developers.google.com/maps/faq#languagesupport</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -1269,7 +1239,7 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_getLanguage" name="method_getLanguage" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">getLanguage()</h3>
+                <h3 class="public "><span class="instance"></span>getLanguage()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getLanguage() : string</pre>
                 <p><em>Get the language code in which to return results.</em></p>
@@ -1287,7 +1257,7 @@ in comma-separated format.</em></p>
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                                                                             <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/faq#languagesupport"><span class="namespace-wrapper">https://developers.google.com/maps/faq#languagesupport</span></a></dd>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/faq#languagesupport"><span class="namespace-wrapper">https://developers.google.com/maps/faq#languagesupport</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -1300,7 +1270,7 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_setApiKey" name="method_setApiKey" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">setApiKey()</h3>
+                <h3 class="public "><span class="instance"></span>setApiKey()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">setApiKey(string  <span class="argument">$apiKey</span>) : \GoogleMapsTimeZone</pre>
                 <p><em>Set the API key to authenticate with.</em></p>
@@ -1325,7 +1295,7 @@ in comma-separated format.</em></p>
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                                                                             <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/console/help/new/#UsingKeys"><span class="namespace-wrapper">https://developers.google.com/console/help/new/#UsingKeys</span></a></dd>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/documentation/timezone/intro?hl=en"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro?hl=en</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -1338,7 +1308,7 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_getApiKey" name="method_getApiKey" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">getApiKey()</h3>
+                <h3 class="public "><span class="instance"></span>getApiKey()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getApiKey() : string</pre>
                 <p><em>Get the API key to authenticate with.</em></p>
@@ -1356,7 +1326,7 @@ in comma-separated format.</em></p>
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                                                                             <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/console/help/new/#UsingKeys"><span class="namespace-wrapper">https://developers.google.com/console/help/new/#UsingKeys</span></a></dd>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/documentation/timezone/intro?hl=en"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro?hl=en</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -1369,7 +1339,7 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_setClientId" name="method_setClientId" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">setClientId()</h3>
+                <h3 class="public "><span class="instance"></span>setClientId()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">setClientId(string  <span class="argument">$clientId</span>) : \GoogleMapsTimeZone</pre>
                 <p><em>Set the client ID for Business clients.</em></p>
@@ -1394,7 +1364,7 @@ in comma-separated format.</em></p>
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                                                                             <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/business/webservices/#client_id"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/business/webservices/#client_id</span></a></dd>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/documentation/business/webservices/#client_id"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/business/webservices/#client_id</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -1407,7 +1377,7 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_getClientId" name="method_getClientId" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">getClientId()</h3>
+                <h3 class="public "><span class="instance"></span>getClientId()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getClientId() : string</pre>
                 <p><em>Get the client ID for Business clients.</em></p>
@@ -1425,7 +1395,7 @@ in comma-separated format.</em></p>
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                                                                             <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/business/webservices/#client_id"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/business/webservices/#client_id</span></a></dd>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/documentation/business/webservices/#client_id"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/business/webservices/#client_id</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -1438,7 +1408,7 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_setSigningKey" name="method_setSigningKey" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">setSigningKey()</h3>
+                <h3 class="public "><span class="instance"></span>setSigningKey()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">setSigningKey(string  <span class="argument">$signingKey</span>) : \GoogleMapsTimeZone</pre>
                 <p><em>Set the cryptographic signing key for Business clients.</em></p>
@@ -1463,7 +1433,7 @@ in comma-separated format.</em></p>
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                                                                             <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key</span></a></dd>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -1476,7 +1446,7 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_getSigningKey" name="method_getSigningKey" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">getSigningKey()</h3>
+                <h3 class="public "><span class="instance"></span>getSigningKey()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getSigningKey() : string</pre>
                 <p><em>Get the cryptographic signing key for Business clients.</em></p>
@@ -1494,7 +1464,7 @@ in comma-separated format.</em></p>
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                                                                             <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key</span></a></dd>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -1507,7 +1477,7 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_isBusinessClient" name="method_isBusinessClient" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">isBusinessClient()</h3>
+                <h3 class="public "><span class="instance"></span>isBusinessClient()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">isBusinessClient() : boolean</pre>
                 <p><em>Whether the request is for a Business client.</em></p>
@@ -1517,7 +1487,7 @@ in comma-separated format.</em></p>
                 
                                     <h4>Returns</h4>
                     boolean
-                                            &mdash; <p>whether the request is for a Business client</p>
+                                            &mdash; <p>Returns true if the request is for a Business client. Otherwise, it returns false.</p>
                                     				
                             </article>
         </div>
@@ -1536,19 +1506,20 @@ in comma-separated format.</em></p>
         <div class="span8 content class">
             <a id="method_queryTimeZone" name="method_queryTimeZone" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">queryTimeZone()</h3>
+                <h3 class="public "><span class="instance"></span>queryTimeZone()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">queryTimeZone(boolean  <span class="argument">$raw = false</span>, resource  <span class="argument">$context = null</span>) : string|array|\SimpleXMLElement</pre>
                 <p><em>Execute the timezone request. The return type is based on the requested
 format: associative array if JSON, SimpleXMLElement object if XML.</em></p>
-                
+                <p>Queries are performed using cURL and, if not available, using file_get_contents()</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
                                 <td>boolean</td>
                                 <td>$raw </td>
-                                <td><p>whether to return the raw (string) response</p></td>
+                                <td><p>If true, the function returns the raw (string) response.
+Otherwise, it returns an array or SimpleXMLElement object with the decoded response.</p></td>
                             </tr>
                                                     <tr>
                                 <td>resource</td>
@@ -1567,9 +1538,7 @@ format: associative array if JSON, SimpleXMLElement object if XML.</em></p>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/timezone/intro#Responses"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro#Responses</span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1581,7 +1550,7 @@ format: associative array if JSON, SimpleXMLElement object if XML.</em></p>
         <div class="span8 content class">
             <a id="method_generateSignature" name="method_generateSignature" class="anchor"></a>
             <article class="method">
-                <h3 class="protected ">generateSignature()</h3>
+                <h3 class="protected "><span class="instance"></span>generateSignature()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">generateSignature(string  <span class="argument">$pathQueryString</span>) : string</pre>
                 <p><em>Generate the signature for a Business client timezone request.</em></p>
@@ -1607,7 +1576,7 @@ format: associative array if JSON, SimpleXMLElement object if XML.</em></p>
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                                                                             <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/business/webservices/auth#digital_signatures"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/business/webservices/auth#digital_signatures</span></a></dd>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/documentation/business/webservices/auth#digital_signatures"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/business/webservices/auth#digital_signatures</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -1620,7 +1589,7 @@ format: associative array if JSON, SimpleXMLElement object if XML.</em></p>
         <div class="span8 content class">
             <a id="method_timezoneQueryString" name="method_timezoneQueryString" class="anchor"></a>
             <article class="method">
-                <h3 class="protected ">timezoneQueryString()</h3>
+                <h3 class="protected "><span class="instance"></span>timezoneQueryString()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">timezoneQueryString() : string</pre>
                 <p><em>Build the query string with all set parameters of the timezone request.</em></p>
@@ -1637,9 +1606,7 @@ format: associative array if JSON, SimpleXMLElement object if XML.</em></p>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/timezone/intro#Requests"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro#Requests</span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1651,7 +1618,7 @@ format: associative array if JSON, SimpleXMLElement object if XML.</em></p>
         <div class="span8 content class">
             <a id="method_timezoneUrl" name="method_timezoneUrl" class="anchor"></a>
             <article class="method">
-                <h3 class="protected ">timezoneUrl()</h3>
+                <h3 class="protected "><span class="instance"></span>timezoneUrl()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">timezoneUrl() : string</pre>
                 <p><em>Build the URL (with query string) of the timezone request.</em></p>
@@ -1668,9 +1635,7 @@ format: associative array if JSON, SimpleXMLElement object if XML.</em></p>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="https://developers.google.com/maps/documentation/timezone/intro#Requests"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro#Requests</span></a></dd>
-                                                                </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1682,7 +1647,7 @@ format: associative array if JSON, SimpleXMLElement object if XML.</em></p>
         <div class="span8 content class">
             <a id="method_base64EncodeUrlSafe" name="method_base64EncodeUrlSafe" class="anchor"></a>
             <article class="method">
-                <h3 class="protected ">base64EncodeUrlSafe()</h3>
+                <h3 class="protected "><span class="static"></span>base64EncodeUrlSafe()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">base64EncodeUrlSafe(string  <span class="argument">$value</span>) : string</pre>
                 <p><em>Encode a string with Base64 using only URL safe characters.</em></p>
@@ -1720,7 +1685,7 @@ format: associative array if JSON, SimpleXMLElement object if XML.</em></p>
         <div class="span8 content class">
             <a id="method_base64DecodeUrlSafe" name="method_base64DecodeUrlSafe" class="anchor"></a>
             <article class="method">
-                <h3 class="protected ">base64DecodeUrlSafe()</h3>
+                <h3 class="protected "><span class="static"></span>base64DecodeUrlSafe()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">base64DecodeUrlSafe(string  <span class="argument">$value</span>) : string</pre>
                 <p><em>Decode a Base64 string that uses only URL safe characters.</em></p>
@@ -1766,20 +1731,12 @@ format: associative array if JSON, SimpleXMLElement object if XML.</em></p>
             <pre data-src="../files/GoogleMapsTimeZone.php.txt" class="language-php line-numbers"></pre>
         </div>
     </div>
-
     <footer class="row-fluid">
         <section class="span10 offset2">
             <section class="row-fluid">
                 <section class="span10 offset1">
                     <section class="row-fluid footer-sections">
-                        <section class="span4">
-                                                        <h1><i class="icon-code"></i></h1>
-                            <div>
-                                <ul>
-                                                                    </ul>
-                            </div>
-                        </section>
-                        <section class="span4">
+                                                <section class="span4">
                                                         <h1><i class="icon-bar-chart"></i></h1>
                             <div>
                                 <ul>
@@ -1802,8 +1759,7 @@ format: associative array if JSON, SimpleXMLElement object if XML.</em></p>
             <section class="row-fluid">
                 <section class="span10 offset1">
                     <hr />
-                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on September 20th, 2016 at 11:23.
+                    Documentation is powered by phpDocumentor and authored  by <a target="_blank" href="https://imelgrat.me">Iv&aacute;n Melgrati</a> on February 25th, 2018 at 19:46.
                 </section>
             </section>
         </section>

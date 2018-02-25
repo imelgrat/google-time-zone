@@ -4,19 +4,22 @@
 	 *
 	 * @package GoogleMapsTimeZone
 	 * @author    Ivan Melgrati
-     * @version   v1.2.0 stable 
+     * @version   v1.4.0 
 	 */
 
 	if (!class_exists('GoogleMapsTimeZone'))
 	{
 		/**
-		 * A PHP wrapper for the Google Maps TimeZone API.
-		 * 
+		 * A PHP wrapper for the Google Maps TimeZone API. 
+		 *
+		 * The Google Maps Time Zone API provides a simple interface to request the time zone for a location on the earth, as well as that location's time offset from UTC.
+		 * The API provides time offset data for locations on the surface of the earth. Requests for the time zone information are made for a specific latitude/longitude pair and date. 
+		 * The API returns the name of that time zone (in different languages), the time offset from UTC, and the daylight savings offset in a user-selectable format (XML or JSON).
+		 * In order to be able to use this class, it's necessary to provide an API key or, for business clients, Client ID and signing key.
 		 * @author    Ivan Melgrati
-		 * @copyright Copyright 2016 by Ivan Melgrati
+		 * @copyright Copyright 2018 by Ivan Melgrati
+		 * @link https://developers.google.com/maps/documentation/timezone/intro
 		 * @license   https://github.com/imelgrat/google-time-zone/blob/master/LICENSE
-		 * @link      https://developers.google.com/maps/documentation/timezone/intro
-		 * @version   v1.2.0 stable 
 		 */
 		class GoogleMapsTimeZone
 		{
@@ -76,7 +79,7 @@
 			const STATUS_UNKNOWN_ERROR = "UNKNOWN_ERROR";
 
 			/**
-			 * Response format.
+			 * Response format (XML or JSON).
              * 
              * @access protected
 			 * @var string $format
@@ -84,7 +87,7 @@
 			protected $format;
 
 			/**
-			 * Latitude to obtain the Time Zone from.
+			 * Latitude to obtain the Time Zone for.
              * 
              * @access protected
 			 * @var float|string $latitude
@@ -92,7 +95,7 @@
 			protected $latitude;
 
 			/**
-			 * Longitude to obtain the Time Zone from.
+			 * Longitude to obtain the Time Zone for.
              * 
              * @access protected
 			 * @var float|string $longitude
@@ -100,7 +103,7 @@
 			protected $longitude;
 
 			/**
-			 * Desired time as seconds since midnight, January 1, 1970 UTC.The Google Maps Time Zone API uses the timestamp to determine whether or not Daylight Savings should be applied. Times before 1970 can be expressed as negative values.
+			 * Desired time as seconds since midnight, January 1, 1970 UTC. The Google Maps Time Zone API uses the timestamp to determine whether or not Daylight Savings should be applied. Times before 1970 can be expressed as negative values.
              * 
              * @access protected
              * @var integer $timestamp
@@ -125,7 +128,7 @@
 			protected $apiKey;
 
 			/**
-			 * Google Maps API Client ID for Business clients.
+			 * Google Maps API Client ID to authenticate Business clients with.
              * 
              * @access protected
 			 * @var string $clientId
@@ -133,7 +136,7 @@
 			protected $clientId;
 
 			/**
-			 * Google Maps API Cryptographic signing key for Business clients.
+			 * Google Maps API Cryptographic signing key to authenticate Business clients with.
              * 
              * @access protected
 			 * @var string $signingKey
@@ -143,8 +146,8 @@
 			/**
 			 * Constructor. The request is not executed until `queryTimeZone()` is called.
 			 *
-			 * @param  float $latitude latitude of the location of the location to get timezone information from
-			 * @param  float $longitude longitude of the location of the location to get timezone information from
+			 * @param  float $latitude latitude of the location of the location to get timezone information for. Default: 0
+			 * @param  float $longitude longitude of the location of the location to get timezone information for. Default: 0
 			 * @param  integer|string $timestamp point in time to get timezone information from. Default: 0 (current time)
 			 * @param  string $format optional response format (JSON default)
 			 * @return GoogleMapsTimeZone
@@ -155,9 +158,8 @@
 			}
 
 			/**
-			 * Set the response format.
+			 * Set the response format (JSON or XML).
 			 *
-			 * @link   https://developers.google.com/maps/documentation/timezone/intro#Responses
 			 * @param  string $format response format
 			 * @return GoogleMapsTimeZone
 			 */
@@ -169,9 +171,8 @@
 			}
 
 			/**
-			 * Get the response format.
+			 * Get the response format (JSON or XML).
 			 *
-			 * @link   https://developers.google.com/maps/documentation/timezone/intro#Responses
 			 * @return string response format
 			 */
 			public function getFormat()
@@ -180,10 +181,9 @@
 			}
 
 			/**
-			 * Whether the response format is JSON.
+			 * Returns true if the response format is JSON.
 			 *
-			 * @link   https://developers.google.com/maps/documentation/timezone/intro#Requests
-			 * @return bool whether JSON
+			 * @return bool
 			 */
 			public function isFormatJson()
 			{
@@ -191,10 +191,9 @@
 			}
 
 			/**
-			 * Whether the response format is XML.
+			 * Returns true if the response format is XML.
 			 *
-			 * @link   https://developers.google.com/maps/documentation/timezone/intro#Requests
-			 * @return bool whether XML
+			 * @return bool
 			 */
 			public function isFormatXml()
 			{
@@ -202,11 +201,10 @@
 			}
 
 			/**
-			 * Set the latitude/longitude of the location to get timezone information from
+			 * Set the latitude/longitude of the location to get timezone information for
 			 *
-			 * @link   https://developers.google.com/maps/documentation/timezone/intro#Usage
 			 * @param  float|string $latitude latitude 
-			 * @param  float|string $longitude longitude of the location of the location to get timezone information from
+			 * @param  float|string $longitude longitude of the location of the location to get timezone information for
 			 * @return GoogleMapsTimeZone
 			 */
 			public function setLatitudeLongitude($latitude, $longitude)
@@ -217,10 +215,9 @@
 			}
 
 			/**
-			 * Get the latitude/longitude of the location of the location to get timezone information from
+			 * Get the latitude/longitude of the location of the location to get timezone information for
 			 * in comma-separated format.
 			 *
-			 * @link   https://developers.google.com/maps/documentation/timezone/intro#Usage
 			 * @return string|false comma-separated coordinates, or false if not set
 			 */
 			public function getLatitudeLongitude()
@@ -239,10 +236,9 @@
 			}
 
 			/**
-			 * Set the latitude of the location of the location to get timezone information from
+			 * Set the latitude of the location of the location to get timezone information for
 			 *
-			 * @link   https://developers.google.com/maps/documentation/timezone/intro#Usage
-			 * @param  float|string $latitude latitude of the location of the location to get timezone information from
+			 * @param  float|string $latitude latitude of the location of the location to get timezone information for
 			 * @return GoogleMapsTimeZone
 			 */
 			public function setLatitude($latitude)
@@ -253,10 +249,9 @@
 			}
 
 			/**
-			 * Get the latitude of the location to get timezone information from
+			 * Get the latitude of the location to get timezone information for
 			 *
-			 * @link   https://developers.google.com/maps/documentation/timezone/intro#Usage
-			 * @return float|string latitude of the location of the location to get timezone information from
+			 * @return float|string latitude of the location of the location to get timezone information for
 			 */
 			public function getLatitude()
 			{
@@ -264,10 +259,9 @@
 			}
 
 			/**
-			 * Set the longitude of the location to get timezone information from
+			 * Set the longitude of the location to get timezone information for
 			 *
-			 * @link   https://developers.google.com/maps/documentation/timezone/intro#Usage
-			 * @param  float|string $longitude longitude of the location of the location to get timezone information from
+			 * @param  float|string $longitude longitude of the location of the location to get timezone information for
 			 * @return GoogleMapsTimeZone
 			 */
 			public function setLongitude($longitude)
@@ -278,10 +272,9 @@
 			}
 
 			/**
-			 * Get the longitude of the location to get timezone information from
+			 * Get the longitude of the location to get timezone information for
 			 *
-			 * @link   https://developers.google.com/maps/documentation/timezone/intro#Usage
-			 * @return float|string longitude of the location of the location to get timezone information from
+			 * @return float|string longitude of the location of the location to get timezone information for
 			 */
 			public function getLongitude()
 			{
@@ -289,10 +282,10 @@
 			}
 
 			/**
-			 * Set the point in time to get timezone information from (used to determine whether or not DST is active).
+			 * Set the point in time to get timezone information for (used to determine whether or not DST is active).
+			 * This can be used to get the selected place's timezone in a point in time.
 			 *
-			 * @link   https://developers.google.com/maps/documentation/timezone/intro#Usage
-			 * @param  integer|string $timestamp point in time to get timezone information from. Default: 0 (current time)
+			 * @param  integer|string $timestamp point in time to get timezone information for. Default: 0 (current time)
 			 * @return GoogleMapsTimeZone
 			 */
 			public function setTimestamp($timestamp = 0)
@@ -305,8 +298,7 @@
 			/**
 			 * Get the point in time to get timezone information from (used to determine whether or not DST is active).
 			 *
-			 * @link   https://developers.google.com/maps/documentation/timezone/intro#Usage
-			 * @return integer|string point in time to get timezone information from.
+			 * @return integer|string point in time to get timezone information for.
 			 */
 			public function getTimestamp()
 			{
@@ -341,7 +333,7 @@
 			/**
 			 * Set the API key to authenticate with.
 			 *
-			 * @link   https://developers.google.com/console/help/new/#UsingKeys
+			 * @link   https://developers.google.com/maps/documentation/timezone/intro?hl=en
 			 * @param  string $apiKey API key
 			 * @return GoogleMapsTimeZone
 			 */
@@ -355,7 +347,7 @@
 			/**
 			 * Get the API key to authenticate with.
 			 *
-			 * @link   https://developers.google.com/console/help/new/#UsingKeys
+			 * @link   https://developers.google.com/maps/documentation/timezone/intro?hl=en
 			 * @return string API key
 			 */
 			public function getApiKey()
@@ -416,7 +408,7 @@
 			/**
 			 * Whether the request is for a Business client.
 			 *
-			 * @return bool whether the request is for a Business client
+			 * @return bool Returns true if the request is for a Business client. Otherwise, it returns false.
 			 */
 			public function isBusinessClient()
 			{
@@ -443,7 +435,6 @@
 			/**
 			 * Build the query string with all set parameters of the timezone request.
 			 *
-			 * @link   https://developers.google.com/maps/documentation/timezone/intro#Requests
 			 * @return string encoded query string of the timezone request
 			 */
 			protected function timezoneQueryString()
@@ -489,7 +480,6 @@
 			/**
 			 * Build the URL (with query string) of the timezone request.
 			 *
-			 * @link   https://developers.google.com/maps/documentation/timezone/intro#Requests
 			 * @return string URL of the timezone request
 			 */
 			protected function timezoneUrl()
@@ -509,16 +499,38 @@
 
 			/**
 			 * Execute the timezone request. The return type is based on the requested
-			 * format: associative array if JSON, SimpleXMLElement object if XML.
+			 * format: associative array if JSON, SimpleXMLElement object if XML. 
+			 * Queries are performed using cURL and, if not available, using file_get_contents()
 			 *
-			 * @link   https://developers.google.com/maps/documentation/timezone/intro#Responses
-			 * @param  bool $raw whether to return the raw (string) response
+			 * @param  bool $raw If true, the function returns the raw (string) response. 
+			 * Otherwise, it returns an array or SimpleXMLElement object with the decoded response.
 			 * @param  resource $context stream context from `stream_context_create()`
 			 * @return string|array|SimpleXMLElement response in requested format
 			 */
 			public function queryTimeZone($raw = false, $context = null)
 			{
-				$response = file_get_contents($this->timezoneUrl(), false, $context);
+				if  (in_array  ('curl', get_loaded_extensions())) 
+				{
+					$options = array(
+						CURLOPT_RETURNTRANSFER => true,   // return web page
+						CURLOPT_HEADER         => false,  // don't return headers
+						CURLOPT_FOLLOWLOCATION => true,   // follow redirects
+						CURLOPT_MAXREDIRS      => 10,     // stop after 10 redirects
+						CURLOPT_ENCODING       => "",     // handle compressed
+						CURLOPT_USERAGENT      => "test", // name of client
+						CURLOPT_AUTOREFERER    => true,   // set referrer on redirect
+						CURLOPT_CONNECTTIMEOUT => 120,    // time-out on connect
+						CURLOPT_TIMEOUT        => 120,    // time-out on response
+					); 
+
+					$ch = curl_init($this->timezoneUrl());
+					curl_setopt_array($ch, $options);
+					$response  = curl_exec($ch);
+				}
+				else 
+				{
+					$response = file_get_contents($this->timezoneUrl(), false, $context);
+				}				
 
 				if ($raw)
 				{

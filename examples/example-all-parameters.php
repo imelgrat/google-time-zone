@@ -4,13 +4,13 @@
      * The code below query performs a time zone request for Github's server (San Francisco, California, United States). The timestamp is set to March 8th, 2012. 
      * 
      * @author Ivan Melgrati
-	 * @copyright 2016
+	 * @copyright 2018
 	 * @package    GoogleMapsTimeZone
 	 * @author     Ivan Melgrati
-	 * @version    v1.0.0 stable 
+	 * @version    1.4.0
 	 */
 
-	require_once ('../src/GoogleTimeZone.php');
+	require_once ('../src/GoogleMapsTimeZone.php');
     
     /**
      * All queries require an API key from Google
@@ -27,15 +27,12 @@
     // Set XML as query return format
     $timezone_object->setFormat($timezone_object::FORMAT_XML);
     
-    // Set Spanish as query return language
+    // Set French as query return language
     // Check  https://developers.google.com/maps/faq#languagesupport for a list of supported languages
-    $timezone_object->setLanguage('es');
+    $timezone_object->setLanguage('fr');
     
-    // Set latitude (Mexico City International Airport)
-    $timezone_object->setLatitude(19.4360812);    
-    
-    // Set longitude (Mexico City International Airport)
-    $timezone_object->setLongitude(-99.074097);
+    // Set latitude and longitude (New York City)
+    $timezone_object->setLatitude(40.730610)->setLongitude(-73.935242);
     
     // Set Timestamp (server-side current time)
     $timezone_object->setTimestamp(time());
@@ -50,7 +47,8 @@
     
     // Set XML as query return format
     $timezone_object->setFormat($timezone_object::FORMAT_JSON);    
-    // Set Arabic as query return language
+    
+	// Set Arabic as query return language
     // Check  https://developers.google.com/maps/faq#languagesupport for a list of supported languages
     $timezone_object->setLanguage('ar');
     
