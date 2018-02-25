@@ -1,7 +1,7 @@
 google-time-zone
 ==================
 
-[![GitHub license](https://img.shields.io/github/license/imelgrat/freegoip.svg?style=flat-square)](https://github.com/imelgrat/freegoip/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/imelgrat/google-time-zone.svg?style=flat-square)](https://github.com/imelgrat/google-time-zone/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/imelgrat/google-time-zone.svg?style=flat-square)](https://github.com/imelgrat/google-time-zone/releases)
 [![Total Downloads](https://poser.pugx.org/imelgrat/google-time-zone/downloads)](https://packagist.org/packages/imelgrat/google-time-zone)
 [![GitHub issues](https://img.shields.io/github/issues/imelgrat/google-time-zone.svg?style=flat-square)](https://github.com/imelgrat/google-time-zone/issues)
