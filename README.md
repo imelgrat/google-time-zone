@@ -4,8 +4,8 @@ google-time-zone
 [![GitHub license](https://img.shields.io/github/license/imelgrat/freegoip.svg?style=flat-square)](https://github.com/imelgrat/freegoip/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/imelgrat/google-time-zone.svg?style=flat-square)](https://github.com/imelgrat/google-time-zone/releases)
 [![Total Downloads](https://poser.pugx.org/imelgrat/google-time-zone/downloads)](https://packagist.org/packages/imelgrat/google-time-zone)
-[![GitHub issues](https://img.shields.io/github/issues/imelgrat/google-time-zone.svg?style=plastic)](https://github.com/imelgrat/google-time-zone/issues)
-[![GitHub stars](https://img.shields.io/github/stars/imelgrat/google-time-zone.svg?style=plastic)](https://github.com/imelgrat/google-time-zone/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/imelgrat/google-time-zone.svg?style=flat-square)](https://github.com/imelgrat/google-time-zone/issues)
+[![GitHub stars](https://img.shields.io/github/stars/imelgrat/google-time-zone.svg?style=flat-square)](https://github.com/imelgrat/google-time-zone/stargazers)
 
 A PHP wrapper for the Google Maps TimeZone API. 
 
