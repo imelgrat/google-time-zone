@@ -5,6 +5,7 @@ google-time-zone
 [![Latest Stable Version](https://poser.pugx.org/imelgrat/google-time-zone/v/stable)](https://packagist.org/packages/imelgrat/google-time-zone)
 [![Total Downloads](https://poser.pugx.org/imelgrat/google-time-zone/downloads)](https://packagist.org/packages/imelgrat/google-time-zone)
 
+<<<<<<< HEAD
 A PHP wrapper for the Google Maps TimeZone API. 
 
 The Google Maps Time Zone API provides a simple interface to request the time zone for a location on the earth, as well as that location's time offset from UTC.
@@ -15,6 +16,11 @@ The class automates the query process and returns the name of that time zone (in
 
 
 Developed by [Ivan Melgrati](https://imelgrat.me) 
+=======
+A PHP wrapper for the Google Maps Time Zone API.
+
+Developed by [Ivan Melgrati](https://imelgrat.me) [![Twitter](https://img.shields.io/twitter/url/https/github.com/imelgrat/tab-collapse.svg?style=social)](https://twitter.com/imelgrat)
+>>>>>>> origin/master
 
 Requirements
 ------------
@@ -43,7 +49,7 @@ The recommended installation method is through
 
 ### Manually
 
-1.  Copy `src/google-time-zone.php` to your codebase, perhaps to the `vendor`
+1.  Copy `src/GoogleMapsTimeZone.php` to your codebase, perhaps to the `vendor`
     directory.
 2.  Add the `GoogleMapsTimeZone` class to your autoloader or `require` the file
     directly.
