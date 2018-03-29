@@ -15,3 +15,14 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+
+
+bin/ export-ignore
+tests/ export-ignore
+.gitignore export-ignore
+.travis.yml export-ignore
+CHANGELOG.md export-ignore
+Makefile export-ignore
+phpdoc.xml.dist export-ignore
+README.rst export-ignore
+
