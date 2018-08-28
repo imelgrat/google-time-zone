@@ -545,7 +545,7 @@
 				}
 				elseif ($this->isFormatXml())
 				{
-					return new SimpleXMLElement($response);
+					return new \SimpleXMLElement($response);
 				}
 				else
 				{
