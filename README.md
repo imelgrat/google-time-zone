@@ -16,7 +16,8 @@ The API provides time offset data for any locations on Earch. Requests for the t
 The class automates the query process and returns the name of that time zone (in different languages), the time offset from UTC, and the daylight savings offset in a user-selectable format (XML or JSON).
 
 
-Developed by [Ivan Melgrati](https://imelgrat.me) 
+Developed by [Ivan Melgrati](https://imelgrat.me)
+ 
 =======
 A PHP wrapper for the Google Maps Time Zone API.
 
@@ -53,6 +54,35 @@ The recommended installation method is through
     directory.
 2.  Add the `GoogleMapsTimeZone` class to your autoloader or `require` the file
     directly.
+	
+
+Then, in order to use the GoogleMapsTimeZone class, you need to invoke the "use" operator to bring the class into skope.
+
+```php
+<?php
+    use imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone;
+	require_once ('../src/GoogleMapsTimeZone.php');
+    
+    /**
+     * All queries require an API key from Google
+     * @link https://developers.google.com/maps/documentation/timezone/get-api-key
+     * */
+	define('API_KEY', 'YOUR API KEY HERE');
+
+	// Initialize GoogleMapsTimeZone object (New York City coordinates)
+	$timezone_object = new GoogleMapsTimeZone(40.730610, -73.935242, 0, GoogleMapsTimeZone::FORMAT_JSON);
+    
+    // Set Google API key
+	$timezone_object->setApiKey(API_KEY);
+    
+    // Perform query 
+	$timezone_data = $timezone_object->queryTimeZone();
+	
+	echo '<pre>';
+	print_r($timezone_data);
+	echo '</pre>';
+?>
+```
 
 Feedback
 --------

@@ -7,9 +7,10 @@
 	 * @copyright 2018
 	 * @package    GoogleMapsTimeZone
 	 * @author     Ivan Melgrati
-	 * @version    1.4.0
+	 * @version    1.5.0
 	 */
-
+    
+    use imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone;
 	require_once ('../src/GoogleMapsTimeZone.php');
     
     /**

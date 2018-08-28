@@ -1,7 +1,7 @@
 {
     "name": "imelgrat/google-time-zone",
     "type": "library",
-    "version" : "1.4.0",
+    "version" : "1.5.0",
     "description": "A PHP wrapper for the Google Maps TimeZone API.",
     "keywords": ["google", "map", "maps", "gmap", "gmaps", "timezone", "time zone", "location"],
     "homepage": "https://github.com/imelgrat/google-time-zone",
@@ -10,11 +10,13 @@
         {
             "name": "Ivan Melgrati",
             "homepage": "http://imelgrat.me",
+            "email": "imelgrat@yahoo.com.ar",
             "role": "Developer"
         }
     ],
     "autoload": {
-        "psr-0": {
+        "psr-4": {
+            "imelgrat\\GoogleMapsTimeZone\\": "src/",
             "": "src/"
         }
     },

@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>Documentation for GoogleMapsTimeZone</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+        <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="192x192" href="../images/apple-touch-icon-192x192.png"/>
+	<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png"/>
+	<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png"/>
+	<link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#00aba9">
+	<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">GoogleMapsTimeZone</a>
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/imelgrat.html">\imelgrat</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1263491571"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1263491571" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-464870431"></a>
+                                <a href="../namespaces/imelgrat.html" style="margin-left: 30px; padding-left: 0">imelgrat</a>
+            </div>
+            <div id="namespace-464870431" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-154329727"></a>
+                                <a href="../namespaces/imelgrat.GoogleMapsTimeZone.html" style="margin-left: 30px; padding-left: 0">GoogleMapsTimeZone</a>
+            </div>
+            <div id="namespace-154329727" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html">GoogleMapsTimeZone</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/imelgrat.GoogleMapsTimeZone.html">\imelgrat\GoogleMapsTimeZone</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\imelgrat\GoogleMapsTimeZone</small>GoogleMapsTimeZone</h1>
+                    <p><em>A PHP wrapper for the Google Maps TimeZone API.</em></p>
+                    <p>The Google Maps Time Zone API provides a simple interface to request the time zone for a location on the earth, as well as that location's time offset from UTC.
+The API provides time offset data for locations on the surface of the earth. Requests for the time zone information are made for a specific latitude/longitude pair and date.
+The API returns the name of that time zone (in different languages), the time offset from UTC, and the daylight savings offset in a user-selectable format (XML or JSON).
+In order to be able to use this class, it's necessary to provide an API key or, for business clients, Client ID and signing key.</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_setFormat" class="">setFormat()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_getFormat" class="">getFormat()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_isFormatJson" class="">isFormatJson()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_isFormatXml" class="">isFormatXml()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_setLatitudeLongitude" class="">setLatitudeLongitude()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_getLatitudeLongitude" class="">getLatitudeLongitude()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_setLatitude" class="">setLatitude()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_getLatitude" class="">getLatitude()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_setLongitude" class="">setLongitude()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_getLongitude" class="">getLongitude()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_setTimestamp" class="">setTimestamp()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_getTimestamp" class="">getTimestamp()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_setLanguage" class="">setLanguage()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_getLanguage" class="">getLanguage()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_setApiKey" class="">setApiKey()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_getApiKey" class="">getApiKey()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_setClientId" class="">setClientId()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_getClientId" class="">getClientId()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_setSigningKey" class="">setSigningKey()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_getSigningKey" class="">getSigningKey()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_isBusinessClient" class="">isBusinessClient()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_queryTimeZone" class="">queryTimeZone()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#constant_URL_DOMAIN" class="">URL_DOMAIN</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#constant_URL_PATH" class="">URL_PATH</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#constant_URL_HTTPS" class="">URL_HTTPS</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#constant_FORMAT_JSON" class="">FORMAT_JSON</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#constant_FORMAT_XML" class="">FORMAT_XML</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#constant_STATUS_SUCCESS" class="">STATUS_SUCCESS</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#constant_STATUS_NO_RESULTS" class="">STATUS_NO_RESULTS</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#constant_STATUS_OVER_LIMIT" class="">STATUS_OVER_LIMIT</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#constant_STATUS_INVALID_REQUEST" class="">STATUS_INVALID_REQUEST</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#constant_STATUS_REQUEST_DENIED" class="">STATUS_REQUEST_DENIED</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#constant_STATUS_UNKNOWN_ERROR" class="">STATUS_UNKNOWN_ERROR</a><br />
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_generateSignature" class="">generateSignature()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_timezoneQueryString" class="">timezoneQueryString()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_timezoneUrl" class="">timezoneUrl()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_base64EncodeUrlSafe" class="">base64EncodeUrlSafe()</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#method_base64DecodeUrlSafe" class="">base64DecodeUrlSafe()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#property_format" class="">$format</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#property_latitude" class="">$latitude</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#property_longitude" class="">$longitude</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#property_timestamp" class="">$timestamp</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#property_language" class="">$language</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#property_apiKey" class="">$apiKey</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#property_clientId" class="">$clientId</a><br />
+                                                                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html#property_signingKey" class="">$signingKey</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/GoogleMapsTimeZone.html"><div class="path-wrapper">GoogleMapsTimeZone.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">GoogleMapsTimeZone</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</div>
+                            </dd>
+
+                        
+                        
+                        
+                                                                            <dt>See also</dt>
+                                                                                    <dd><a target="_blank" href="https://developers.google.com/maps/documentation/timezone/intro"><div class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro</div></a></dd>
+                                                    
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                    <p>Ivan Melgrati</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                version
+                            </th>
+                            <td>
+                                                                    
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                copyright
+                            </th>
+                            <td>
+                                                                    <p>Copyright 2018 by Ivan Melgrati</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                license
+                            </th>
+                            <td>
+                                                                    <p><a href="https://github.com/imelgrat/google-time-zone/blob/master/LICENSE">https://github.com/imelgrat/google-time-zone/blob/master/LICENSE</a></p>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                                    <a id="constants" name="constants"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Constants</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_URL_DOMAIN" name="constant_URL_DOMAIN" class="anchor"></a>
+            <article id="constant_URL_DOMAIN" class="constant">
+                <h3 class="">URL_DOMAIN</h3>
+                <pre class="signature">URL_DOMAIN</pre>
+                <p><em>URL_DOMAIN Domain portion of the Google Maps Time Zone API URL.</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_URL_PATH" name="constant_URL_PATH" class="anchor"></a>
+            <article id="constant_URL_PATH" class="constant">
+                <h3 class="">URL_PATH</h3>
+                <pre class="signature">URL_PATH</pre>
+                <p><em>URL_PATH Path portion of the Google Maps Time Zone API URL.</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_URL_HTTPS" name="constant_URL_HTTPS" class="anchor"></a>
+            <article id="constant_URL_HTTPS" class="constant">
+                <h3 class="">URL_HTTPS</h3>
+                <pre class="signature">URL_HTTPS</pre>
+                <p><em>HTTPS URL of the Google Maps Time Zone API.</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_FORMAT_JSON" name="constant_FORMAT_JSON" class="anchor"></a>
+            <article id="constant_FORMAT_JSON" class="constant">
+                <h3 class="">FORMAT_JSON</h3>
+                <pre class="signature">FORMAT_JSON</pre>
+                <p><em>FORMAT_JSON JSON response format.</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_FORMAT_XML" name="constant_FORMAT_XML" class="anchor"></a>
+            <article id="constant_FORMAT_XML" class="constant">
+                <h3 class="">FORMAT_XML</h3>
+                <pre class="signature">FORMAT_XML</pre>
+                <p><em>FORMAT_XML XML response format.</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_STATUS_SUCCESS" name="constant_STATUS_SUCCESS" class="anchor"></a>
+            <article id="constant_STATUS_SUCCESS" class="constant">
+                <h3 class="">STATUS_SUCCESS</h3>
+                <pre class="signature">STATUS_SUCCESS</pre>
+                <p><em>STATUS_SUCCESS No errors occurred, the coordinates were successfully parsed and at lease one time zone was returned.</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_STATUS_NO_RESULTS" name="constant_STATUS_NO_RESULTS" class="anchor"></a>
+            <article id="constant_STATUS_NO_RESULTS" class="constant">
+                <h3 class="">STATUS_NO_RESULTS</h3>
+                <pre class="signature">STATUS_NO_RESULTS</pre>
+                <p><em>STATUS_NO_RESULTS Coordinates parsing was successful, but returned no results. Indicates that no time zone data could be found for the specified position or time. Confirm that the request is for a location on land, and not over water.</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_STATUS_OVER_LIMIT" name="constant_STATUS_OVER_LIMIT" class="anchor"></a>
+            <article id="constant_STATUS_OVER_LIMIT" class="constant">
+                <h3 class="">STATUS_OVER_LIMIT</h3>
+                <pre class="signature">STATUS_OVER_LIMIT</pre>
+                <p><em>STATUS_OVER_LIMIT Over limit of 2,500 (100,000 if premier) requests per day.</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_STATUS_INVALID_REQUEST" name="constant_STATUS_INVALID_REQUEST" class="anchor"></a>
+            <article id="constant_STATUS_INVALID_REQUEST" class="constant">
+                <h3 class="">STATUS_INVALID_REQUEST</h3>
+                <pre class="signature">STATUS_INVALID_REQUEST</pre>
+                <p><em>STATUS_INVALID_REQUEST Invalid request, indicates that the request was malformed or a mandatory parameter was missing</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_STATUS_REQUEST_DENIED" name="constant_STATUS_REQUEST_DENIED" class="anchor"></a>
+            <article id="constant_STATUS_REQUEST_DENIED" class="constant">
+                <h3 class="">STATUS_REQUEST_DENIED</h3>
+                <pre class="signature">STATUS_REQUEST_DENIED</pre>
+                <p><em>Request denied. Indicates that the the API did not complete the request. Confirm that the request was sent over HTTPS instead of HTTP.</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="constant_STATUS_UNKNOWN_ERROR" name="constant_STATUS_UNKNOWN_ERROR" class="anchor"></a>
+            <article id="constant_STATUS_UNKNOWN_ERROR" class="constant">
+                <h3 class="">STATUS_UNKNOWN_ERROR</h3>
+                <pre class="signature">STATUS_UNKNOWN_ERROR</pre>
+                <p><em>STATUS_UNKNOWN_ERROR Unknown server error. May succeed if tried again.</em></p>
+                
+            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_format" name="property_format" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected "><span class="instance"></span>$format</h3>
+                <pre class="signature">$format : string</pre>
+                <p><em>Response format (XML or JSON).</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_latitude" name="property_latitude" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected "><span class="instance"></span>$latitude</h3>
+                <pre class="signature">$latitude : float|string</pre>
+                <p><em>Latitude to obtain the Time Zone for.</em></p>
+                
+
+                                <h4>Type</h4>
+                float|string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_longitude" name="property_longitude" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected "><span class="instance"></span>$longitude</h3>
+                <pre class="signature">$longitude : float|string</pre>
+                <p><em>Longitude to obtain the Time Zone for.</em></p>
+                
+
+                                <h4>Type</h4>
+                float|string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_timestamp" name="property_timestamp" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected "><span class="instance"></span>$timestamp</h3>
+                <pre class="signature">$timestamp : integer</pre>
+                <p><em>Desired time as seconds since midnight, January 1, 1970 UTC. The Google Maps Time Zone API uses the timestamp to determine whether or not Daylight Savings should be applied. Times before 1970 can be expressed as negative values.</em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_language" name="property_language" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected "><span class="instance"></span>$language</h3>
+                <pre class="signature">$language : string</pre>
+                <p><em>Language code in which to return results.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_apiKey" name="property_apiKey" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected "><span class="instance"></span>$apiKey</h3>
+                <pre class="signature">$apiKey : string</pre>
+                <p><em>Google Maps API key to authenticate with.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_clientId" name="property_clientId" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected "><span class="instance"></span>$clientId</h3>
+                <pre class="signature">$clientId : string</pre>
+                <p><em>Google Maps API Client ID to authenticate Business clients with.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_signingKey" name="property_signingKey" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected "><span class="instance"></span>$signingKey</h3>
+                <pre class="signature">$signingKey : string</pre>
+                <p><em>Google Maps API Cryptographic signing key to authenticate Business clients with.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(float  <span class="argument">$latitude</span>, float  <span class="argument">$longitude</span>, integer|string  <span class="argument">$timestamp</span>, string  <span class="argument">$format = self::FORMAT_JSON</span>) : \imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</pre>
+                <p><em>Constructor. The request is not executed until `queryTimeZone()` is called.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>float</td>
+                                <td>$latitude </td>
+                                <td><p>latitude of the location of the location to get timezone information for. Default: 0</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float</td>
+                                <td>$longitude </td>
+                                <td><p>longitude of the location of the location to get timezone information for. Default: 0</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer|string</td>
+                                <td>$timestamp </td>
+                                <td><p>point in time to get timezone information from. Default: 0 (current time)</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$format </td>
+                                <td><p>optional response format (JSON default)</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html">\imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setFormat" name="method_setFormat" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>setFormat()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setFormat(string  <span class="argument">$format</span>) : \imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</pre>
+                <p><em>Set the response format (JSON or XML).</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$format </td>
+                                <td><p>response format</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html">\imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getFormat" name="method_getFormat" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>getFormat()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getFormat() : string</pre>
+                <p><em>Get the response format (JSON or XML).</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>response format</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isFormatJson" name="method_isFormatJson" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>isFormatJson()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isFormatJson() : boolean</pre>
+                <p><em>Returns true if the response format is JSON.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isFormatXml" name="method_isFormatXml" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>isFormatXml()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isFormatXml() : boolean</pre>
+                <p><em>Returns true if the response format is XML.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setLatitudeLongitude" name="method_setLatitudeLongitude" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>setLatitudeLongitude()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setLatitudeLongitude(float|string  <span class="argument">$latitude</span>, float|string  <span class="argument">$longitude</span>) : \imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</pre>
+                <p><em>Set the latitude/longitude of the location to get timezone information for</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>float|string</td>
+                                <td>$latitude </td>
+                                <td><p>latitude</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>float|string</td>
+                                <td>$longitude </td>
+                                <td><p>longitude of the location of the location to get timezone information for</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html">\imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLatitudeLongitude" name="method_getLatitudeLongitude" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>getLatitudeLongitude()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLatitudeLongitude() : string|false</pre>
+                <p><em>Get the latitude/longitude of the location of the location to get timezone information for
+in comma-separated format.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string|false
+                                            &mdash; <p>comma-separated coordinates, or false if not set</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setLatitude" name="method_setLatitude" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>setLatitude()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setLatitude(float|string  <span class="argument">$latitude</span>) : \imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</pre>
+                <p><em>Set the latitude of the location of the location to get timezone information for</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>float|string</td>
+                                <td>$latitude </td>
+                                <td><p>latitude of the location of the location to get timezone information for</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html">\imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLatitude" name="method_getLatitude" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>getLatitude()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLatitude() : float|string</pre>
+                <p><em>Get the latitude of the location to get timezone information for</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    float|string
+                                            &mdash; <p>latitude of the location of the location to get timezone information for</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setLongitude" name="method_setLongitude" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>setLongitude()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setLongitude(float|string  <span class="argument">$longitude</span>) : \imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</pre>
+                <p><em>Set the longitude of the location to get timezone information for</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>float|string</td>
+                                <td>$longitude </td>
+                                <td><p>longitude of the location of the location to get timezone information for</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html">\imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLongitude" name="method_getLongitude" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>getLongitude()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLongitude() : float|string</pre>
+                <p><em>Get the longitude of the location to get timezone information for</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    float|string
+                                            &mdash; <p>longitude of the location of the location to get timezone information for</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setTimestamp" name="method_setTimestamp" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>setTimestamp()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setTimestamp(integer|string  <span class="argument">$timestamp</span>) : \imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</pre>
+                <p><em>Set the point in time to get timezone information for (used to determine whether or not DST is active).</em></p>
+                <p>This can be used to get the selected place's timezone in a point in time.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer|string</td>
+                                <td>$timestamp </td>
+                                <td><p>point in time to get timezone information for. Default: 0 (current time)</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html">\imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTimestamp" name="method_getTimestamp" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>getTimestamp()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTimestamp() : integer|string</pre>
+                <p><em>Get the point in time to get timezone information from (used to determine whether or not DST is active).</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer|string
+                                            &mdash; <p>point in time to get timezone information for.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setLanguage" name="method_setLanguage" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>setLanguage()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setLanguage(string  <span class="argument">$language</span>) : \imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</pre>
+                <p><em>Set the language code in which to return results.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$language </td>
+                                <td><p>language code</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html">\imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/faq#languagesupport"><span class="namespace-wrapper">https://developers.google.com/maps/faq#languagesupport</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLanguage" name="method_getLanguage" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>getLanguage()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLanguage() : string</pre>
+                <p><em>Get the language code in which to return results.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>language code</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/faq#languagesupport"><span class="namespace-wrapper">https://developers.google.com/maps/faq#languagesupport</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setApiKey" name="method_setApiKey" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>setApiKey()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setApiKey(string  <span class="argument">$apiKey</span>) : \imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</pre>
+                <p><em>Set the API key to authenticate with.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$apiKey </td>
+                                <td><p>API key</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html">\imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/documentation/timezone/intro?hl=en"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro?hl=en</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getApiKey" name="method_getApiKey" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>getApiKey()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getApiKey() : string</pre>
+                <p><em>Get the API key to authenticate with.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>API key</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/documentation/timezone/intro?hl=en"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/timezone/intro?hl=en</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setClientId" name="method_setClientId" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>setClientId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setClientId(string  <span class="argument">$clientId</span>) : \imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</pre>
+                <p><em>Set the client ID for Business clients.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$clientId </td>
+                                <td><p>client ID</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html">\imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/documentation/business/webservices/#client_id"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/business/webservices/#client_id</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getClientId" name="method_getClientId" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>getClientId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getClientId() : string</pre>
+                <p><em>Get the client ID for Business clients.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>client ID</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/documentation/business/webservices/#client_id"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/business/webservices/#client_id</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setSigningKey" name="method_setSigningKey" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>setSigningKey()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setSigningKey(string  <span class="argument">$signingKey</span>) : \imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</pre>
+                <p><em>Set the cryptographic signing key for Business clients.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$signingKey </td>
+                                <td><p>cryptographic signing key</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/imelgrat.GoogleMapsTimeZone.GoogleMapsTimeZone.html">\imelgrat\GoogleMapsTimeZone\GoogleMapsTimeZone</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSigningKey" name="method_getSigningKey" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>getSigningKey()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSigningKey() : string</pre>
+                <p><em>Get the cryptographic signing key for Business clients.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>cryptographic signing key</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isBusinessClient" name="method_isBusinessClient" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>isBusinessClient()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isBusinessClient() : boolean</pre>
+                <p><em>Whether the request is for a Business client.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>Returns true if the request is for a Business client. Otherwise, it returns false.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_queryTimeZone" name="method_queryTimeZone" class="anchor"></a>
+            <article class="method">
+                <h3 class="public "><span class="instance"></span>queryTimeZone()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">queryTimeZone(boolean  <span class="argument">$raw = false</span>, resource  <span class="argument">$context = null</span>) : string|array|\imelgrat\GoogleMapsTimeZone\SimpleXMLElement</pre>
+                <p><em>Execute the timezone request. The return type is based on the requested
+format: associative array if JSON, SimpleXMLElement object if XML.</em></p>
+                <p>Queries are performed using cURL and, if not available, using file_get_contents()</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$raw </td>
+                                <td><p>If true, the function returns the raw (string) response.
+Otherwise, it returns an array or SimpleXMLElement object with the decoded response.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>resource</td>
+                                <td>$context </td>
+                                <td><p>stream context from <code>stream_context_create()</code></p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string|array|\imelgrat\GoogleMapsTimeZone\SimpleXMLElement
+                                            &mdash; <p>response in requested format</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_generateSignature" name="method_generateSignature" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected "><span class="instance"></span>generateSignature()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">generateSignature(string  <span class="argument">$pathQueryString</span>) : string</pre>
+                <p><em>Generate the signature for a Business client timezone request.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$pathQueryString </td>
+                                <td><p>path and query string of the request</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>Base64 encoded signature that's URL safe</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a target="_blank" href="https://developers.google.com/maps/documentation/business/webservices/auth#digital_signatures"><span class="namespace-wrapper">https://developers.google.com/maps/documentation/business/webservices/auth#digital_signatures</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_timezoneQueryString" name="method_timezoneQueryString" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected "><span class="instance"></span>timezoneQueryString()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">timezoneQueryString() : string</pre>
+                <p><em>Build the query string with all set parameters of the timezone request.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>encoded query string of the timezone request</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_timezoneUrl" name="method_timezoneUrl" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected "><span class="instance"></span>timezoneUrl()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">timezoneUrl() : string</pre>
+                <p><em>Build the URL (with query string) of the timezone request.</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>URL of the timezone request</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_base64EncodeUrlSafe" name="method_base64EncodeUrlSafe" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected "><span class="static"></span>base64EncodeUrlSafe()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">base64EncodeUrlSafe(string  <span class="argument">$value</span>) : string</pre>
+                <p><em>Encode a string with Base64 using only URL safe characters.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>value to encode</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>encoded value</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_base64DecodeUrlSafe" name="method_base64DecodeUrlSafe" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected "><span class="static"></span>base64DecodeUrlSafe()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">base64DecodeUrlSafe(string  <span class="argument">$value</span>) : string</pre>
+                <p><em>Decode a Base64 string that uses only URL safe characters.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$value </td>
+                                <td><p>value to decode</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>decoded value</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">GoogleMapsTimeZone.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/GoogleMapsTimeZone.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                                                <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by phpDocumentor and authored  by <a target="_blank" href="https://imelgrat.me">Iv&aacute;n Melgrati</a> on August 28th, 2018 at 04:20.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

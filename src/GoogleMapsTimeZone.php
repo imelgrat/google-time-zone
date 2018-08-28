@@ -4,9 +4,11 @@
 	 *
 	 * @package GoogleMapsTimeZone
 	 * @author    Ivan Melgrati
-     * @version   v1.4.0 
+     * @version   v1.5.0 
 	 */
-
+    
+    namespace imelgrat\GoogleMapsTimeZone;
+    
 	if (!class_exists('GoogleMapsTimeZone'))
 	{
 		/**
@@ -17,6 +19,7 @@
 		 * The API returns the name of that time zone (in different languages), the time offset from UTC, and the daylight savings offset in a user-selectable format (XML or JSON).
 		 * In order to be able to use this class, it's necessary to provide an API key or, for business clients, Client ID and signing key.
 		 * @author    Ivan Melgrati
+         * @version   1.5.0
 		 * @copyright Copyright 2018 by Ivan Melgrati
 		 * @link https://developers.google.com/maps/documentation/timezone/intro
 		 * @license   https://github.com/imelgrat/google-time-zone/blob/master/LICENSE
