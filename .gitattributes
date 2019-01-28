@@ -15,3 +15,10 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+
+docs/ export-ignore
+examples/ export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
+phpdoc.xml.dist export-ignore
+VERSION export-ignore
